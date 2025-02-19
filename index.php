@@ -60,9 +60,9 @@ include 'config.php';
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="blog-post">
                             <h3>' . htmlspecialchars($row["title"]) . '</h3>
-                            <img src="uploads/' . htmlspecialchars($row["image"]) . '" alt="Blog Image">
+                            <img src="contents/' . htmlspecialchars($row["image"]) . '" alt="Blog Image">
                             <p>' . substr(htmlspecialchars($row["content"]), 0, 100) . '...</p>
-                            <a href="blog_detail.php?id=' . $row["id"] . '" class="read-more">Read More</a>
+                            <a href="blog_post.php?id=' . $row["id"] . '" class="read-more">Read More</a>
                           </div>';
                 }
             } else {
