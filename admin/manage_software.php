@@ -46,14 +46,54 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Software</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        nav {
+            background: #333;
+            padding: 3px 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Logout Positioning */
+        .logout {
+            position: absolute;
+            right: 20px;
+        }
+
+    </style>
 </head>
 <body>
 
 <header>
+    <div style="width: 100%; height: 1vh; background-color: #F68B1F;"></div>
     <h1>Manage Software</h1>
     <nav>
-        <a href="admin_dashboard.php">Home</a>
-        <a href="admin_logout.php">Logout</a>
+        <a href="admin_dashboard.php"><i class="fas fa-home"></i> Home</a>
+        <a href="manage_software.php" ><i class="fas fa-cogs"></i> Manage Software</a>
+        <a href="manage_blog.php"><i class="fas fa-newspaper"></i> Manage Blog</a>
+        <a href="admin_logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </nav>
 </header>
 
@@ -64,7 +104,7 @@ $result = $conn->query($sql);
         <textarea name="description" placeholder="Description" required></textarea>
         <input type="number" step="0.01" name="price" placeholder="Price" required>
         <input type="text" name="file_link" placeholder="Download/Purchase Link" required> <br> <br>
-        <button type="submit">Add Software</button>
+        <button type="submit" class="buy-btn">Add Software</button>
     </form>
 
     <h2>Software List</h2>

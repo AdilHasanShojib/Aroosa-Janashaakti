@@ -57,7 +57,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
+             <button type="submit" style="background-color: #00C000; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius:5px; cursor: pointer;">Login</button>  <br> <br>
+
+            <button style="background-color: #007bff; padding: 10px 20px; width: 200px; font-size: 16px; border: none; border-radius:5px; cursor: pointer;">
+    <a href="../index.php" style="color: white; text-decoration: none; display: block;">Go to Homepage</a>
+</button>
         </form>
     </div>
 

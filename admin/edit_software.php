@@ -69,17 +69,65 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Software</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        nav {
+            background: #333;
+            padding: 3px 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Logout Positioning */
+        .logout {
+            position: absolute;
+            right: 20px;
+        }
+
+    </style>
 </head>
 <body>
 
+    <header>
+         <div style="width: 100%; height: 1vh; background-color: #F68B1F;"></div>
+    <h1>Edit Software</h1>
+    <nav>
+        <a href="admin_dashboard.php"><i class="fas fa-home"></i> Home</a>
+        <a href="manage_software.php" ><i class="fas fa-cogs"></i> Manage Software</a>
+        <a href="manage_blog.php"><i class="fas fa-newspaper"></i> Manage Blog</a>
+        <a href="admin_logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+</header>
+
 <div class="admin-container">
-    <h2>Edit Software</h2>
+   
     <form method="POST">
         <input type="text" name="name" value="<?php echo htmlspecialchars($software['name']); ?>" required>
         <textarea name="description" required><?php echo htmlspecialchars($software['description']); ?></textarea>
         <input type="number" step="0.01" name="price" value="<?php echo htmlspecialchars($software['price']); ?>" required>
         <input type="text" name="file_link" value="<?php echo htmlspecialchars($software['file']); ?>" required> <br> <br>
-        <button type="submit">Update Software</button>
+        <button type="submit" class="buy-btn">Update Software</button>
     </form>
 </div>
 
