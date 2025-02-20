@@ -96,6 +96,7 @@ include 'config.php';
                 while ($row = $result->fetch_assoc()) {
                     echo '<div class="software-item">
                             <h3>' . htmlspecialchars($row["name"]) . '</h3>
+                            <img src="contents/' . htmlspecialchars($row["image"]) . '" alt="Software Image" style="width: 150px; height: 150px; object-fit: cover;">
                             <p>' . htmlspecialchars($row["description"]) . '</p>
                             <p>Price: $' . htmlspecialchars($row["price"]) . '</p>
                             <a href="checkout.php?id=' . $row["id"] . '" class="buy-btn">Buy Now</a>

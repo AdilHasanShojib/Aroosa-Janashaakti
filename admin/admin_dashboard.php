@@ -73,7 +73,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
     <div class="admin-container">
        
         <img src="../contents/admin.png" alt="Image" height="300px" width="auto">
-         <h2>Welcome, Admin!</h2>
+         <h2 style="font-size: 50px;">Welcome, Admin!</h2>
     </div>
 
 </body>
