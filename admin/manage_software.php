@@ -99,11 +99,12 @@ $result = $conn->query($sql);
 
 <div class="admin-container">
     <h2>Add New Software</h2>
-    <form action="add_software.php" method="POST">
+    <form action="add_software.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="Software Name" required>
         <textarea name="description" placeholder="Description" required></textarea>
         <input type="number" step="0.01" name="price" placeholder="Price" required>
-        <input type="text" name="file_link" placeholder="Download/Purchase Link" required> <br> <br>
+        <input type="text" name="file_link" placeholder="Download/Purchase Link" required>
+        <input type="file" name="image" required> <br>
         <button type="submit" class="buy-btn">Add Software</button>
     </form>
 

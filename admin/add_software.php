@@ -29,15 +29,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST['price'];
     $file = $_POST['file_link'];
 
-    $sql = "INSERT INTO software_products (name, description, price, file) VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssds", $name, $description, $price, $file);
+    // Handle file upload
+    $image = $_FILES['image']['name'];
+    $target_dir = "../contents/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
 
-    if ($stmt->execute()) {
-        header("Location: manage_software.php");
-        exit();
+    
+
+
+   
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+
+        $sql = "INSERT INTO software_products (name, description, price, file, image) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ssdss", $name, $description, $price, $file, $image);
+
+
+        if ($stmt->execute()) {
+             header("Location: manage_software.php");
+             exit();
+        } else {
+             echo "Error: " . $stmt->error;
+        }
     } else {
-        echo "Error: " . $conn->error;
+        echo "Failed to upload image.";
     }
+
 }
+
 ?>

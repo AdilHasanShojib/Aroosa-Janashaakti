@@ -51,9 +51,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST['price'];
     $file = $_POST['file_link'];
 
-    $sql = "UPDATE software SET name=?, description=?, price=?, file=? WHERE id=?";
+
+   // Handle file upload
+    if (!empty($_FILES["image"]["name"])) {
+        $image = $_FILES['image']['name'];
+        $target_dir = "../contents/";
+        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+        move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+    } else {
+        $image = $software['image'];
+    }
+
+
+
+    $sql = "UPDATE software_products SET name=?, description=?, price=?, file=?, image=? WHERE id=?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssdsi", $name, $description, $price, $file, $id);
+    $stmt->bind_param("ssdssi", $name, $description, $price, $file, $image, $id);
 
     if ($stmt->execute()) {
         header("Location: manage_software.php");
@@ -122,11 +135,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="admin-container">
    
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <input type="text" name="name" value="<?php echo htmlspecialchars($software['name']); ?>" required>
         <textarea name="description" required><?php echo htmlspecialchars($software['description']); ?></textarea>
         <input type="number" step="0.01" name="price" value="<?php echo htmlspecialchars($software['price']); ?>" required>
-        <input type="text" name="file_link" value="<?php echo htmlspecialchars($software['file']); ?>" required> <br> <br>
+        <input type="text" name="file_link" value="<?php echo htmlspecialchars($software['file']); ?>" required> 
+        <input type="file" name="image"> <br> <br>
         <button type="submit" class="buy-btn">Update Software</button>
     </form>
 </div>

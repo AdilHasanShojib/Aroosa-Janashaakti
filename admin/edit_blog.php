@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssi", $title, $content, $image, $id);
 
     if ($stmt->execute()) {
+         echo "Software Update successfully!";
         header("Location: manage_blog.php");
         exit();
     }
