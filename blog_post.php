@@ -80,6 +80,10 @@ $blog = $result->fetch_assoc();
             right: 20px;
         }
 
+  
+.software-container, .blog-container {
+    flex-direction: row-reverse; 
+}
 
 
 </style>

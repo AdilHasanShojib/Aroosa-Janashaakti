@@ -87,6 +87,10 @@ include 'config.php';
 }
 
 
+.software-container, .blog-container {
+    flex-direction: row-reverse; 
+}
+
 
 </style>
 </head>
