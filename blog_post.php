@@ -80,10 +80,7 @@ $blog = $result->fetch_assoc();
             right: 20px;
         }
 
-  
-.software-container, .blog-container {
-    flex-direction: row-reverse; 
-}
+
 
 
 </style>
@@ -112,6 +109,7 @@ $blog = $result->fetch_assoc();
     <img src="contents/<?php echo htmlspecialchars($blog["image"]); ?>" height="300px" width="auto" alt="Blog Image" style="display: block; margin: 20px auto;">
     <p style="font-size: 20px; line-height: 1.6;  text-align: left"><?php echo htmlspecialchars($blog["content"]); ?></p>
 </div>
+
 
 
 

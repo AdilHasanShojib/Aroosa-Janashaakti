@@ -48,12 +48,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style >
+        
+  .error{
+    color: red;
+    font-weight: bold;
+  }
+
+
+
+
+
+    </style>
 </head>
 <body>
 
     <div class="login-container">
         <h2>Admin Login</h2>
-        <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
+        <?php if (isset($error)) echo "<p class='error' >$error</p>"; ?>
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>

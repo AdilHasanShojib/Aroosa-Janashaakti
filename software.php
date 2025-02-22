@@ -112,6 +112,16 @@ include 'config.php';
         </div>
     </section>
 
+     <footer>
+        <h1>Aroosa Janashakti Ltd.</h1>
+        <p>Level 3, Plot Kha 201/1, 203, 205/3,
+           Bir Uttam Rafiqul Islam Ave, Dhaka 1213 <br> <br>
+           Email: info@aroosajanashakti.com</p>
+
+        <p>&copy; 2025 Aroosa Janashakti. All rights reserved.</p>
+    </footer>
+
+
     
 
    
