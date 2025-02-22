@@ -50,6 +50,35 @@ if (!isset($_SESSION["admin_logged_in"])) {
             right: 20px;
         }
 
+
+    .typing-container {
+    
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    font-family: Arial, sans-serif;
+    border-right: 3px solid white; /* Blinking cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(15, end) forwards, blink 0.7s infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%; /* Adjust width according to text length */
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
     </style>
  
 
@@ -73,7 +102,8 @@ if (!isset($_SESSION["admin_logged_in"])) {
     <div class="admin-container">
        
         <img src="../contents/admin.png" alt="Image" height="300px" width="auto">
-         <h2 style="font-size: 50px;">Welcome, Admin!</h2>
+
+         <h2 class="typing-container">Welcome, Admin!</h2>
     </div>
 
 </body>
