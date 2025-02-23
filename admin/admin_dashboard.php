@@ -16,6 +16,13 @@ if (!isset($_SESSION["admin_logged_in"])) {
        <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
+
+        body{
+            background: white;
+
+          }
+
+
         nav {
             background: #333;
             padding: 3px 6px;
@@ -101,7 +108,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
 
     <div class="admin-container">
        
-        <img src="../contents/admin.png" alt="Image" height="300px" width="auto">
+        <img src="../contents/admim.jpg" alt="Image" height="300px" width="auto">
 
          <h2 class="typing-container">Welcome, Admin!</h2>
     </div>
