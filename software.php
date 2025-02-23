@@ -36,6 +36,50 @@ include 'config.php';
             cursor: pointer;
         }
 
+        .logo-title{
+          font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            margin: 0;
+            color: white;
+            justify-content: center;
+            word-spacing: 15px;
+        }
+
+        
+        nav {
+            background: #333;
+            padding: 3px 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        /* Logout Positioning */
+        .logout {
+            position: absolute;
+            right: 20px;
+        }
+
         
     </style>
 </head>
@@ -56,7 +100,9 @@ include 'config.php';
         <div class="search-box">
             <form action="" method="GET">
                 <input type="text" name="search" placeholder="Search Software..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-                <button type="submit">Search</button>
+                <button type="submit">
+                    <i class="fas fa-search"></i> Search
+                </button>
             </form>
         </div>
         <div class="software-container">

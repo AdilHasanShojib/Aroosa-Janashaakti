@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="name" placeholder="Your Name" required><br>
         <input type="email" name="email" placeholder="Your Email" required><br>
         <input type="text" name="phone" placeholder="Your Phone" required><br>
-        <button type="submit" style="background-color: #00C000; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius:5px; cursor: pointer;">Request Checkout</button> <br> <br>
+        <button type="submit" style="background-color: #25d366; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius:5px; cursor: pointer;">Request Checkout</button> <br> <br>
         
 
     </form>

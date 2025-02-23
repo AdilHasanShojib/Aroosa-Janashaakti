@@ -110,7 +110,9 @@ include 'config.php';
           <div class="search-box">
             <form action="" method="GET">
                 <input type="text" name="search" placeholder="Search blog..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-                <button type="submit">Search</button>
+                <button type="submit">
+           <i class="fas fa-search"></i> Search
+           </button>
             </form>
         </div>
         <div class="blog-container">

@@ -20,6 +20,12 @@ if ($result->num_rows == 0) {
 
 $blog = $result->fetch_assoc();
 
+$currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+$title = urlencode($blog['title']);
+
+//echo $currentURL;
+
 // Handle Comment Submission
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['comment_submit'])) {
     $name = htmlspecialchars($_POST['name']);
@@ -199,7 +205,7 @@ $comments_result = $stmt->get_result();
         }
 
         .edit-btn {
-            background-color: #00C000;
+            background-color: #25d366;
             color: black;
         }
 
@@ -217,9 +223,56 @@ $comments_result = $stmt->get_result();
             width: 100%;
             height: 60px;
         }
-    </style>
+
+
+   .social-share {
+   
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-share h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-share a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+}
+
+.facebook {
+    background: #3b5998;
+}
+
+.twitter {
+    background: #1da1f2;
+}
+
+.linkedin {
+    background: #0077b5;
+}
+
+.whatsapp {
+    background: #25d366;
+}
+
+.social-share a:hover {
+    opacity: 0.8;
+}
+
+ </style>
 </head>
 <body>
+
+
+
 
     <header>
         <div style="width: 100%; height: 1vh; background-color: #F68B1F;"></div>
@@ -232,11 +285,37 @@ $comments_result = $stmt->get_result();
         </nav>
     </header>
 
+
+
+
     <div class="single-blog">
         <h3><?php echo htmlspecialchars($blog["title"]); ?></h3>
         <img src="contents/<?php echo htmlspecialchars($blog["image"]); ?>" alt="Blog Image">
         <p><?php echo nl2br(htmlspecialchars($blog["content"])); ?></p>
     </div>
+
+
+  
+    <div class="social-share">
+    <h3>Share this Post:</h3>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($currentURL); ?>" target="_blank" class="facebook">
+
+        <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+    <a href="https://twitter.com/intent/tweet?url=<?php echo $currentURL; ?>&text=<?php echo $title; ?>" target="_blank" class="twitter">
+        <i class="fab fa-twitter"></i> Twitter
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $currentURL; ?>" target="_blank" class="linkedin">
+        <i class="fab fa-linkedin-in"></i> LinkedIn
+    </a>
+    <a href="https://api.whatsapp.com/send?text=<?php echo $title . ' ' . $currentURL; ?>" target="_blank" class="whatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+</div>
+
+
+
+
 
     <!-- Comment Section -->
     <div class="comment-section">
