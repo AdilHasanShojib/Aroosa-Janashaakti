@@ -12,7 +12,25 @@ include 'config.php';
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+       .search-box {
+            text-align: center;
+            margin: 20px 0;
+        }
 
+        .search-box input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-box button {
+            padding: 10px 15px;
+            background: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
       
 
 
@@ -89,10 +107,21 @@ include 'config.php';
     <!-- Blog Section -->
     <section id="blog">
         <h2>All Blog Posts</h2>
+          <div class="search-box">
+            <form action="" method="GET">
+                <input type="text" name="search" placeholder="Search blog..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
+                <button type="submit">Search</button>
+            </form>
+        </div>
         <div class="blog-container">
             <?php
-            $sql = "SELECT * FROM blogs ORDER BY created_at DESC";
-            $result = $conn->query($sql);
+            $search = isset($_GET['search']) ? $_GET['search'] : '';
+            $sql = "SELECT * FROM blogs WHERE title LIKE ? ORDER BY created_at DESC";
+            $stmt = $conn->prepare($sql);
+            $searchTerm = "%" . $search . "%";
+            $stmt->bind_param("s", $searchTerm);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
