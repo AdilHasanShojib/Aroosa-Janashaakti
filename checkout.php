@@ -21,9 +21,12 @@ if (isset($_GET['id'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $phone = $_POST['phone'];
     $software_name = $_POST['software_name'];
 
     $mail = new PHPMailer(true);
+    $success_message = "";
+    $failed_message = "";
 
     try {
         // SMTP Configuration
@@ -40,12 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->addAddress('adilhasanshojib@gmail.com'); // Admin Email
 
         $mail->Subject = "New Software Checkout Request";
-        $mail->Body = "User: $name\nEmail: $email\nRequested Software: $software_name";
+        $mail->Body = "User: $name\nEmail: $email\nPhone: $phone\nRequested Software: $software_name";
 
         $mail->send();
-        echo "<p style='color: green;'>Checkout request sent successfully!</p>";
+        $success_message = "<p style='color: green; font-weight: bold; text-align: center;'>Checkout request sent successfully!</p>";
     } catch (Exception $e) {
-        echo "<p style='color: red;'>Failed to send email. Error: {$mail->ErrorInfo}</p>";
+        $failed_message= "<p style='color: red; font-weight: bold; text-align: center;'>Failed to send email. Error: {$mail->ErrorInfo}</p>";
     }
 }
 ?>
@@ -137,12 +140,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </header>
    <div class="checkout"> 
     <h2>Checkout - <?php echo htmlspecialchars($software['name']); ?></h2>
+
+ <?php 
+    if (!empty($success_message)) {
+        echo $success_message;
+    } elseif (!empty($failed_message)) {
+        echo $failed_message;
+    }
+    ?>
+
+
+
    </div>
-    
     <form method="post" class="login-container">
         <input type="hidden" name="software_name" value="<?php echo htmlspecialchars($software['name']); ?>">
         <input type="text" name="name" placeholder="Your Name" required><br>
         <input type="email" name="email" placeholder="Your Email" required><br>
+        <input type="text" name="phone" placeholder="Your Phone" required><br>
         <button type="submit" style="background-color: #00C000; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius:5px; cursor: pointer;">Request Checkout</button> <br> <br>
         
 
