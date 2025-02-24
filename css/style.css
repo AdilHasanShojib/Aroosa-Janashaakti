@@ -18,6 +18,16 @@ nav a {
     text-decoration: none;
 }
 
+
+.active {
+    background-color: #F68B1F; 
+    color: white;
+    border-radius: 5px;
+}
+
+
+
+
 h2 {
     text-align: center;
     color: #333;

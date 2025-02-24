@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             position: relative;
         }
 
-        /* Navigation Links */
+       
         .nav-links {
             display: flex;
             gap: 20px;
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+ 
     <header>
         <div style="width: 100%; height: 1vh; background-color: #F68B1F;"></div>
           

@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $content = $_POST['content'];
 
-    // Handle file upload
+    //file upload
     $image = $_FILES['image']['name'];
     $target_dir = "../contents/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);

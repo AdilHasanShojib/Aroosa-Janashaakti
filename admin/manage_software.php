@@ -3,15 +3,13 @@ session_start();
 //include '../config.php';
 
 
-$host = "localhost";  // Change if using an external database
-$user = "root";       // Default user for local development
-$pass = "";           // Default password (leave blank for XAMPP)
+$host = "localhost";  
+$user = "root";       
+$pass = "";           
 $dbname = "aroosa_janashakti";
 
-// Create connection
 $conn = new mysqli($host, $user, $pass, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -22,7 +20,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
     exit();
 }
 
-// Handle software deletion
+//software deletion
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $sql = "DELETE FROM software_products WHERE id = ?";
@@ -34,7 +32,6 @@ if (isset($_GET['delete'])) {
     }
 }
 
-// Fetch all software products
 $sql = "SELECT * FROM software_products ORDER BY price DESC";
 $result = $conn->query($sql);
 ?>
@@ -57,7 +54,7 @@ $result = $conn->query($sql);
             position: relative;
         }
 
-        /* Navigation Links */
+        
         .nav-links {
             display: flex;
             gap: 20px;
@@ -76,7 +73,7 @@ $result = $conn->query($sql);
             color: #ffcc00;
         }
 
-        /* Logout Positioning */
+        
         .logout {
             position: absolute;
             right: 20px;

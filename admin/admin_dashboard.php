@@ -32,7 +32,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
             position: relative;
         }
 
-        /* Navigation Links */
+    
         .nav-links {
             display: flex;
             gap: 20px;
@@ -51,7 +51,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
             color: #ffcc00;
         }
 
-        /* Logout Positioning */
+      
         .logout {
             position: absolute;
             right: 20px;
@@ -64,7 +64,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
     font-weight: bold;
     color: black;
     font-family: Arial, sans-serif;
-    border-right: 3px solid white; /* Blinking cursor effect */
+    border-right: 3px solid white; 
     white-space: nowrap;
     overflow: hidden;
     width: 0;
@@ -76,7 +76,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
       width: 0%;
     }
     to {
-      width: 100%; /* Adjust width according to text length */
+      width: 100%; 
     }
   }
 

@@ -2,9 +2,9 @@
 session_start();
 //include '../config.php';
 
-$host = "localhost";  // Change if using an external database
-$user = "root";       // Default user for local development
-$pass = "";           // Default password (leave blank for XAMPP)
+$host = "localhost"; 
+$user = "root";       
+$pass = "";           
 $dbname = "aroosa_janashakti";
 
 // Create connection

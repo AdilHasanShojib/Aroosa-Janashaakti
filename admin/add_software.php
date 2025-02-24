@@ -2,15 +2,15 @@
 session_start();
 //include '../config.php';
 
-$host = "localhost";  // Change if using an external database
-$user = "root";       // Default user for local development
-$pass = "";           // Default password (leave blank for XAMPP)
+$host = "localhost";  
+$user = "root";       
+$pass = "";          
 $dbname = "aroosa_janashakti";
 
-// Create connection
+
 $conn = new mysqli($host, $user, $pass, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST['price'];
     $file = $_POST['file_link'];
 
-    // Handle file upload
+    // file upload
     $image = $_FILES['image']['name'];
     $target_dir = "../contents/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);

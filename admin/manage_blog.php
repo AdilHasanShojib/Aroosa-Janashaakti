@@ -7,7 +7,7 @@ if (!isset($_SESSION["admin_logged_in"])) {
     exit();
 }
 
-// Handle blog post deletion
+//blog post deletion
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $sql = "DELETE FROM blogs WHERE id = ?";
@@ -19,7 +19,6 @@ if (isset($_GET['delete'])) {
     }
 }
 
-// Fetch all blog posts
 $sql = "SELECT * FROM blogs ORDER BY created_at DESC";
 $result = $conn->query($sql);
 ?>

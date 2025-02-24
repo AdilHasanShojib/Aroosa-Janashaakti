@@ -12,9 +12,7 @@ include 'config.php';
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
+       
 
         .search-box {
             text-align: center;
@@ -55,7 +53,7 @@ include 'config.php';
             position: relative;
         }
 
-        /* Navigation Links */
+       
         .nav-links {
             display: flex;
             gap: 20px;
@@ -74,7 +72,6 @@ include 'config.php';
             color: #ffcc00;
         }
 
-        /* Logout Positioning */
         .logout {
             position: absolute;
             right: 20px;
@@ -100,7 +97,7 @@ include 'config.php';
         <div class="search-box">
             <form action="" method="GET">
                 <input type="text" name="search" placeholder="Search Software..." value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
-                <button type="submit">
+                <button type="submit">`
                     <i class="fas fa-search"></i> Search
                 </button>
             </form>

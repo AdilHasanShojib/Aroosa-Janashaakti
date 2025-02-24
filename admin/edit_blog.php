@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
     $content = $_POST['content'];
     
-    // Handle file upload
+    //file upload
     if (!empty($_FILES["image"]["name"])) {
         $image = $_FILES['image']['name'];
         $target_dir = "../contents/";
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssi", $title, $content, $image, $id);
 
     if ($stmt->execute()) {
-         echo "Software Update successfully!";
+        
         header("Location: manage_blog.php");
         exit();
     }
@@ -89,7 +89,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             color: #ffcc00;
         }
 
-        /* Logout Positioning */
+        
+
         .logout {
             position: absolute;
             right: 20px;

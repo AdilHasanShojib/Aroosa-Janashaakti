@@ -56,6 +56,8 @@ include 'config.php';
             color: #ffcc00;
         }
 
+
+    
         /* Logout Positioning */
         .logout {
             position: absolute;
@@ -96,7 +98,8 @@ include 'config.php';
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+   
+
     <header>
         <div style="width: 100%; height: 1vh; background-color: #F68B1F;"></div>
           
@@ -106,14 +109,14 @@ include 'config.php';
 
         <nav>
 
-        <a href=""><i class="fas fa-home"></i> Home</a>
+        <a href="" class="active"><i class="fas fa-home"></i> Home</a>
         <a href="software.php"><i class="fas fa-shopping-cart"></i> Software Shop</a>
         <a href="blog.php"><i class="fas fa-newspaper"></i> Blog</a>
         <a href="admin/admin_login.php" class="logout"><i class="fas fa-user-shield"></i> Admin</a>
         </nav>
     </header>
 
-    <!-- Software Shop Section -->
+
     <section id="software">
         <h2 >Latest Software Products</h2>
         <div class="software-container">
@@ -147,7 +150,8 @@ include 'config.php';
 
     </section>
 
-    <!-- Blog Section -->
+   
+
     <section id="blog">
         <h2 style="margin-top: 50px;">Latest Blog Posts</h2>
         <div class="blog-container">
@@ -170,7 +174,8 @@ include 'config.php';
             ?>
         </div>
 
-  <!-- "See More" Button -->
+
+
         <div class="see-more-container">
             <a href="blog.php" class="see-more-btn">See More Blogs</a>
         </div>
@@ -178,7 +183,7 @@ include 'config.php';
 
     </section>
 
-    <!-- Footer -->
+
     <footer>
         <h1>Aroosa Janashakti Ltd.</h1>
         <p>Level 3, Plot Kha 201/1, 203, 205/3,

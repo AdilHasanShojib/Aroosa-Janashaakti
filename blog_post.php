@@ -26,7 +26,7 @@ $title = urlencode($blog['title']);
 
 //echo $currentURL;
 
-// Handle Comment Submission
+//Comment Submission
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['comment_submit'])) {
     $name = htmlspecialchars($_POST['name']);
     $comment = htmlspecialchars($_POST['comment']);
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['comment_submit'])) {
     }
 }
 
-// Handle Comment Edit
+//Comment Edit
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit_comment_submit'])) {
     $comment_id = $_POST['comment_id'];
     $updated_comment = htmlspecialchars($_POST['updated_comment']);
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit_comment_submit'])
     }
 }
 
-// Handle Comment Deletion
+//Comment Deletion
 if (isset($_GET['delete_comment'])) {
     $comment_id = $_GET['delete_comment'];
     $delete_sql = "DELETE FROM comments WHERE id = ?";
@@ -81,7 +81,7 @@ $comments_result = $stmt->get_result();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
 
-              .logo-title {
+            .logo-title {
             font-family: 'Playfair Display', serif;
             font-size: 17px;
             margin: 0;

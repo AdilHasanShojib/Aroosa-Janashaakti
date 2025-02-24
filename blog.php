@@ -85,7 +85,6 @@ include 'config.php';
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <header>
         <div style="width: 100%; height: 1vh; background-color: #F68B1F;"></div>
           
@@ -104,7 +103,7 @@ include 'config.php';
     </header>
 
 
-    <!-- Blog Section -->
+    
     <section id="blog">
         <h2>All Blog Posts</h2>
           <div class="search-box">
