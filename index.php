@@ -37,7 +37,6 @@ include 'config.php';
             position: relative;
         }
 
-        /* Navigation Links */
         .nav-links {
             display: flex;
             gap: 20px;
@@ -58,7 +57,7 @@ include 'config.php';
 
 
     
-        /* Logout Positioning */
+      
         .logout {
             position: absolute;
             right: 20px;
@@ -109,7 +108,7 @@ include 'config.php';
 
         <nav>
 
-        <a href="" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href=""><i class="fas fa-home"></i> Home</a>
         <a href="software.php"><i class="fas fa-shopping-cart"></i> Software Shop</a>
         <a href="blog.php"><i class="fas fa-newspaper"></i> Blog</a>
         <a href="admin/admin_login.php" class="logout"><i class="fas fa-user-shield"></i> Admin</a>
