@@ -42,11 +42,14 @@ Active navbar highlighting with white underline
 
 🛠️ Tech Stack
 
-Language	Usage
 PHP	Backend logic
+
 MySQL	Database
+
 HTML5	Structure
+
 CSS3	Styling
+
 Font Awesome / Google Fonts	Icons & Typography
 
 
