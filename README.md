@@ -1,4 +1,5 @@
 🛍️ Aroosa Janashakti – Software Shop & Blog Portal
+
 Aroosa Janashakti is a simple yet powerful web application built using raw PHP, MySQL, HTML, and CSS. It offers a lightweight, framework-free solution for managing software products and publishing blogs — all with an admin panel, commenting system, and social media integration.
 
 🚀 Features
